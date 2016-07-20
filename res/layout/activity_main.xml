@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <GridView
+        android:id="@+id/game_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdgeLength="0dp"
+        android:gravity="center"
+        android:horizontalSpacing="0dp"
+        android:listSelector="@null"
+        android:numColumns="10"
+        android:verticalSpacing="0dp" >
+    </GridView>
+
+    <com.example.laserchess.PieceView
+        android:id="@+id/game_canvas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp" >
+
+            <ImageButton
+                android:id="@+id/left_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/left_arrow" />
+
+            <ImageButton
+                android:id="@+id/up_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@id/left_button"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/left_button"
+                android:src="@drawable/up_arrow" />
+
+            <ImageButton
+                android:id="@+id/down_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/left_button"
+                android:layout_toRightOf="@id/left_button"
+                android:src="@drawable/down_arrow" />
+
+            <ImageButton
+                android:id="@+id/right_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/right_arrow" />
+
+            <ImageButton
+                android:id="@+id/down_right_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/up_button"
+                android:src="@drawable/down_right_arrow" />
+
+            <ImageButton
+                android:id="@+id/down_left_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/right_button"
+                android:src="@drawable/down_left_arrow" />
+
+            <ImageButton
+                android:id="@+id/up_left_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/down_button"
+                android:src="@drawable/up_left_arrow" />
+
+            <ImageButton
+                android:id="@+id/up_right_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@+id/left_button"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/up_right_arrow" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/turn_text"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Red Players Turn" >
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/rotate_clockwise"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/clockwise_arrow" />
+
+                <ImageButton
+                    android:id="@+id/rotate_counterclockwise"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleX="-1"
+                    android:src="@drawable/clockwise_arrow" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
